@@ -1,8 +1,8 @@
 	.file	"add.c"
 	.section .text
 	.align 1
-	.global _sub
-_sub:
+	.global _add
+_add:
 	mov.w	r6,@-r7
 	mov.w	r7,r6
 	subs	#2,r7
@@ -26,7 +26,7 @@ _main:
 	subs	#2,r7
 	mov.w	#10,r1
 	mov.w	#10,r0
-	jsr	@_sub
+	jsr	@_add
 	mov.w	r0,r2
 	mov.w	r2,@(-2,r6)
 	sub.w	r2,r2
