@@ -1,0 +1,57 @@
+	.file	"len.c"
+	.section .text
+	.align 1
+	.global _strslen
+_strslen:
+	mov.w	r6,@-r7
+	mov.w	r7,r6
+	subs	#2,r7
+	subs	#2,r7
+	mov.w	r0,@(-2,r6)
+	sub.w	r2,r2
+	mov.w	r2,@(-4,r6)
+.L2:
+	mov.w	@(-2,r6),r3
+	mov.w	@(-4,r6),r2
+	add.w	r3,r2
+	mov.b	@r2,r2l
+	mov.b	r2l,r2l
+	beq	.L3
+	mov.w	@(-4,r6),r2
+	adds	#1,r2
+	mov.w	r2,@(-4,r6)
+	bra	.L2
+.L3:
+	mov.w	@(-4,r6),r2
+	mov.w	r2,r0
+	adds	#2,r7
+	adds	#2,r7
+	mov.w	@r7+,r6
+	rts
+	.section .rodata
+.LC0:
+	.ascii "hello world\12\0"
+	.section .text
+	.align 1
+	.global _main
+_main:
+	mov.w	r6,@-r7
+	mov.w	r7,r6
+	subs	#2,r7
+	subs	#2,r7
+	sub.w	r2,r2
+	mov.w	r2,@(-2,r6)
+	mov.w	#.LC0,r2
+	mov.w	r2,@(-4,r6)
+	mov.w	@(-4,r6),r0
+	jsr	@_strslen
+	mov.w	r0,r2
+	mov.w	r2,@(-2,r6)
+	sub.w	r2,r2
+	mov.w	r2,r0
+	adds	#2,r7
+	adds	#2,r7
+	mov.w	@r7+,r6
+	rts
+	.end
+	.ident	"GCC: (GNU) 3.4.6"
