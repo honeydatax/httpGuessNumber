@@ -1,5 +1,5 @@
 # h8300
-study of h8300 processor for beguiners
+xpad a pad graphic model to make you gambas new projects
 
-https://en.m.wikipedia.org/wiki/H8_Family
+
 
