@@ -1,0 +1,6 @@
+' Gambas class file
+
+Public idxss As String
+Public overs As Integer
+Public tryss As Integer
+Public number As Integer
