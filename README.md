@@ -1,5 +1,6 @@
 # xpad
-xpad a pad graphic model to make you gambas new projects
+game guess a number on line client side and server side
 
 
-came to build you version on xpad
+
+
