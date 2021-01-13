@@ -89,7 +89,7 @@ ee = 0
     Close Last
     End If
   Catch 
-  r  'Write #Last, "error\r\n", 9
+ 'Write #Last, "error\r\n", 9
 End
 Public Sub Socket_closed()
   Print "closed..."
